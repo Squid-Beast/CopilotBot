@@ -1,0 +1,4 @@
+spring:
+  security:
+    name: "admin"
+    password: "admin"
