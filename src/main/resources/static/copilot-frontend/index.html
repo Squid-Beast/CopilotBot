@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CopilotApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Copilot</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/ChatController.js"></script>
+</head>
+<body ng-controller="ChatController">
+
+    <header>
+        <h1>Stock Market Copilot</h1>
+        <p>Your AI-Powered Stock Market Assistant</p>
+    </header>
+
+    <section class="theory">
+        <h2>Welcome to Stock Market Copilot</h2>
+        <p>At Stock Market Copilot, we provide real-time updates, trends, and AI-powered stock recommendations to help you make informed investment decisions. Our platform offers:</p>
+        <ul>
+            <li><strong>Real-Time Market Data</strong>: Stay updated with the latest prices and trends for major stocks and indices.</li>
+            <li><strong>AI-Powered Insights</strong>: Get personalized stock recommendations based on advanced AI algorithms.</li>
+            <li><strong>Interactive Chat Support</strong>: Have questions? Our AI chatbot is here to assist you with any stock market queries.</li>
+        </ul>
+        <p><strong>Why Choose Us?</strong></p>
+        <ul>
+            <li><strong>Accuracy</strong>: Our AI algorithms are designed to provide accurate and reliable stock recommendations.</li>
+            <li><strong>User-Friendly</strong>: Our platform is easy to navigate, making it accessible for both beginners and experienced investors.</li>
+            <li><strong>Support</strong>: Our interactive chat support is available 24/7 to help you with any questions or concerns.</li>
+        </ul>
+        <p>Start your investment journey with Stock Market Copilot today and take control of your financial future!</p>
+    </section>
+
+    <section class="stock-info">
+        <div class="card">
+            <h2>📈 Bitcoin (BTC)</h2>
+            <p>Current Price: <strong>$85,984.35</strong></p>
+            <p>24h Change: <span class="green">+0.93%</span></p>
+        </div>
+        <div class="card">
+            <h2>📉 Tesla (TSLA)</h2>
+            <p>Current Price: <strong>$725.50</strong></p>
+            <p>24h Change: <span class="red">-1.34%</span></p>
+        </div>
+        <div class="card">
+            <h2>📊 S&P 500</h2>
+            <p>Current Index: <strong>4,785.60</strong></p>
+            <p>24h Change: <span class="green">+0.45%</span></p>
+        </div>
+    </section>
+
+    <button class="chat-button" ng-click="toggleChat()">💬 Chat</button>
+
+    <div class="chat-popup" ng-show="showChat">
+        <div class="chat-header">
+            <span>Stock Market Help Service</span>
+            <button class="close-btn" ng-click="toggleChat()">✖</button>
+        </div>
+        <iframe ng-src="{{ trustedBotUrl }}" frameborder="0"></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2022 Stock Market Copilot. All rights reserved.</p>
+    </footer>
+</body>
+</html>

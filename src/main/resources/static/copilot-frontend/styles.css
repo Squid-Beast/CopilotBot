@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+/* Stock Info Section Styles */
+.stock-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.green {
+    color: #4CAF50;
+}
+
+.red {
+    color: #F44336;
+}
+
+/* Chat Button Styles */
+.chat-button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 15px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chat-button:hover {
+    background-color: #45a049;
+}
+
+/* Chat Popup Styles */
+.chat-popup {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    bottom: 80px;
+    position: fixed;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: #4CAF50;
+    border-bottom: 1px solid #ddd;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+iframe {
+    border: none;
+    height: 400px;
+    width: 100%;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
