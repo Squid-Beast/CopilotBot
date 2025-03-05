@@ -11,11 +11,20 @@
 </head>
 <body ng-controller="ChatController">
 
+    <!-- Header Section -->
     <header>
-        <h1>Stock Market Copilot</h1>
-        <p>Your AI-Powered Stock Market Assistant</p>
+        <div class="header-content">
+            <div class="header-left">
+                <h1>Stock Market Copilot</h1>
+                <p>Your AI-Powered Stock Market Assistant</p>
+            </div>
+            <div class="header-right">
+                <input type="text" placeholder="Search..." class="search-bar">
+            </div>
+        </div>
     </header>
 
+    <!-- Theory Section -->
     <section class="theory">
         <h2>Welcome to Stock Market Copilot</h2>
         <p>At Stock Market Copilot, we provide real-time updates, trends, and AI-powered stock recommendations to help you make informed investment decisions. Our platform offers:</p>
@@ -33,6 +42,7 @@
         <p>Start your investment journey with Stock Market Copilot today and take control of your financial future!</p>
     </section>
 
+    <!-- Stock Market Info Section -->
     <section class="stock-info">
         <div class="card">
             <h2>📈 Bitcoin (BTC)</h2>
@@ -51,6 +61,7 @@
         </div>
     </section>
 
+    <!-- Floating Chat Button -->
     <button class="chat-button" ng-click="toggleChat()">💬 Chat</button>
 
     <div class="chat-popup" ng-show="showChat">
@@ -61,6 +72,7 @@
         <iframe ng-src="{{ trustedBotUrl }}" frameborder="0"></iframe>
     </div>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2022 Stock Market Copilot. All rights reserved.</p>
     </footer>

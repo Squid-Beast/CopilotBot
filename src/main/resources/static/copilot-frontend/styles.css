@@ -1,18 +1,35 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header Styles */
 header {
-    background-color: #4CAF50;
+    background-color: #0078d4;
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    text-align: left;
+}
+
+.header-right {
+    text-align: right;
 }
 
 header h1 {
@@ -25,11 +42,51 @@ header p {
     font-size: 1.2em;
 }
 
+.search-bar {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Theory Section Styles */
+.theory {
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.theory h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.theory p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.theory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.theory ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.theory ul li strong {
+    color: #0078d4;
+}
+
 /* Stock Info Section Styles */
 .stock-info {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    background-color: #f9f9f9;
+    flex-grow: 1;
 }
 
 .card {
@@ -62,7 +119,7 @@ header p {
 
 /* Chat Button Styles */
 .chat-button {
-    background-color: #4CAF50;
+    background-color: #ff5722; /* Change to your desired color */
     border: none;
     border-radius: 50%;
     color: white;
@@ -70,12 +127,15 @@ header p {
     font-size: 1.5em;
     padding: 15px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 20px; /* Add margin from the bottom */
+    right: 20px;  /* Add margin from the right */
+    z-index: 1001; /* Ensure the chat button is in front of other elements */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .chat-button:hover {
-    background-color: #45a049;
+    background-color: #e64a19; /* Change to a darker shade of your desired color */
+    transform: scale(1.1); /* Slightly increase the size on hover */
 }
 
 /* Chat Popup Styles */
@@ -92,11 +152,12 @@ header p {
 }
 
 .chat-header {
-    background-color: #4CAF50;
+    background-color: #0078d4;
     border-bottom: 1px solid #ddd;
     color: white;
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 .close-btn {
@@ -118,8 +179,11 @@ iframe {
 
 /* Footer Styles */
 footer {
-    background-color: #4CAF50;
+    background-color: #0078d4;
     color: white;
     padding: 10px;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
