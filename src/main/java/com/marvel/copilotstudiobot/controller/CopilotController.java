@@ -1,16 +1,19 @@
 package com.marvel.copilotstudiobot.controller;
 
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 // import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,21 +22,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import com.marvel.copilotstudiobot.service.CopilotService;
 
 @RestController
 @RequestMapping("/copilot")
+@CrossOrigin(origins = "*")
 public class CopilotController {
 
     @Autowired
     private CopilotService copilotService;
-    
+
+    // @Value("${smarty.auth-id}")
+    // private String authId;
+
+    // @Value("${smarty.auth-token}")
+    // private String authToken;
+
+    @Value("${opencage.api-key}")
+    private String apiKey;
+
     private static final String TOKEN_URL = "https://default70de199207c6480fa318a1afcba039.83.environment.api.powerplatform.com/powervirtualagents/botsbyschema/cre88_stockMarketHelpService/directline/token?api-version=2022-03-01-preview";
     
     private static final String DIRECT_LINE_CONVERSATION_URL = "https://default70de199207c6480fa318a1afcba039.83.environment.api.powerplatform.com/powervirtualagents/botsbyschema/cre88_stockMarketHelpService/directline/conversations/";
-
 
     private final RestTemplate restTemplate= new RestTemplate();
 
@@ -105,4 +116,18 @@ public class CopilotController {
     public String getBotUrl() {
         return copilotService.getBotUrl();
     }
+
+    @GetMapping("/autocomplete")
+    public ResponseEntity<String> getAutocomplete(@RequestParam String query) {
+        String url = "https://api.opencagedata.com/geocode/v1/json?q=" + query + "&key=" + apiKey;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        return ResponseEntity.ok(response.getBody());
+    }
+    
 }

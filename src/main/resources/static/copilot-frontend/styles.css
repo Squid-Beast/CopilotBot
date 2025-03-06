@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
 }
 
 /* Header Styles */
@@ -16,6 +18,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 .header-content {
@@ -54,6 +57,7 @@ header p {
     padding: 20px;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
+    width: 100%;
 }
 
 .theory h2 {
@@ -87,6 +91,7 @@ header p {
     padding: 20px;
     background-color: #f9f9f9;
     flex-grow: 1;
+    width: 100%;
 }
 
 .card {
@@ -115,6 +120,28 @@ header p {
 
 .red {
     color: #F44336;
+}
+
+/* Redirect Button Styles */
+.redirect-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.redirect-button {
+    background-color: #0078d4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.redirect-button:hover {
+    background-color: #005a9e;
+    transform: scale(1.05);
 }
 
 /* Chat Button Styles */
@@ -186,4 +213,73 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Form Section Styles */
+.form-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    margin: 20px 0;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.form-section input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-section button {
+    background-color: #0078d4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-section button:hover {
+    background-color: #005a9e;
+    transform: scale(1.05);
+}
+
+/* Suggestions Styles */
+.suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+    position: absolute;
+    width: calc(100% - 22px); /* Adjust width to match input field */
+    z-index: 1000;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
 }

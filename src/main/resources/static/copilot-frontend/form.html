@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CopilotApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/FormController.js"></script>
+</head>
+<body ng-controller="FormController">
+    <header>
+        <h1>Address Form</h1>
+    </header>
+    <section class="form-section">
+        <form id="address-form">
+            <label for="street1">Street Address 1:</label>
+            <input id="street1" type="text" ng-model="address.street1" ng-keyup="getSuggestions()" placeholder="Start typing your address...">
+            <ul ng-show="suggestions.length > 0" class="suggestions">
+                <li ng-repeat="suggestion in suggestions" ng-click="selectSuggestion(suggestion)">
+                    {{suggestion.street_line}}, {{suggestion.city}}, {{suggestion.state}}, {{suggestion.zipcode}}
+                </li>
+            </ul>
+            <label for="street2">Street Address 2:</label>
+            <input id="street2" type="text" ng-model="address.street2" placeholder="Street Address 2">
+            <label for="city">City:</label>
+            <input id="city" type="text" ng-model="address.city" placeholder="City">
+            <label for="state">State:</label>
+            <input id="state" type="text" ng-model="address.state" placeholder="State">
+            <label for="zip">Zip Code:</label>
+            <input id="zip" type="text" ng-model="address.zip" placeholder="Zip Code">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2022 Stock Market Copilot. All rights reserved.</p>
+    </footer>
+</body>
+</html>
